@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import {Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker'
+import config from '../config'
 
 const CreatePool = ()=> {
 
@@ -18,13 +19,13 @@ const CreatePool = ()=> {
   const [nflItems, setNflItems]=useState([
 
   ])
-/*
+
   useEffect(()=> {
-    fetch("https://api-nba-v1.p.rapidapi.com/games/seasonYear/2020", {
+    fetch(`${config.API_URL}/games/seasonYear/2020`, {
   	"method": "GET",
   	"headers": {
-  		"x-rapidapi-key": "ab1b6aa2e6msh9c8a2eb2b20d521p13cd74jsn0900b994b1c8",
-  		"x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
+  		"x-rapidapi-key": `${config.API_KEY}`,
+  		"x-rapidapi-host": `${config.API_HOST}`
   	}
   })
   .then(res=> res.json())
@@ -50,7 +51,7 @@ const CreatePool = ()=> {
   console.error(err);
   });
 },[])
-*/
+
 
   const onLeagueOpen = useCallback(()=> {
     setGameOpen(false)
